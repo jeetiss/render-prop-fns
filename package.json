@@ -1,6 +1,6 @@
 {
   "name": "render-prop-fns",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "author": "jeetiss",
   "license": "MIT",
@@ -44,7 +44,5 @@
     "rollup-plugin-peer-deps-external": "^2.0.0",
     "rollup-plugin-url": "^1.3.0"
   },
-  "files": [
-    "dist"
-  ]
+  "files": ["dist"]
 }

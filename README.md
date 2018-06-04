@@ -1,6 +1,6 @@
 # render-prop-fns
 
-> 
+>
 
 [![NPM](https://img.shields.io/npm/v/render-prop-fns.svg)](https://www.npmjs.com/package/render-prop-fns) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -13,17 +13,21 @@ npm install --save render-prop-fns
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from "react";
 
-import MyComponent from 'render-prop-fns'
+import { Counter } from "render-prop-fns";
 
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
+const Example = () => (
+  <Counter>
+    {({ inc, value }) => (
+      <div>
+        {value}
+        <br />
+        <button onClick={inc}>increment</button>
+      </div>
+    )}
+  </Counter>
+);
 ```
 
 ## License
