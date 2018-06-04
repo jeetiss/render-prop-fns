@@ -2,10 +2,10 @@ import { Component } from 'react'
 
 class Toggler extends Component {
   state = {
-    value: !!this.defaultValue || false
+    value: !!this.initial || false
   }
 
-  toggle = (value) => this.setState({ value: !value })
+  toggle = value => this.setState({ value: !value })
   on = () => this.setState({ value: true })
   off = () => this.setState({ value: false })
 
