@@ -2,10 +2,16 @@ import { Component } from 'react'
 
 class Stater extends Component {
   state = {
-    value: this.initial || null
+    value: this.props.initial || null
   }
 
-  set = value => this.setState({ value })
+  set = value => {
+    if (!Array.isArray(this.state.value) && typeof this.state.value === 'object') {
+      this.setState({ value: Object.assign({}, this.state.value, value) })
+    } else {
+      this.setState({ value })
+    }
+  }
 
   render () {
     const { children, render } = this.props
