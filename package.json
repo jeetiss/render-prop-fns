@@ -13,7 +13,8 @@
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
-    "test": "TEST=true ava"
+    "test": "TEST=true ava --verbose",
+    "test:watch": "TEST=true ava -w --verbose"
   },
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0",
@@ -59,7 +60,7 @@
     ],
     "require": [
       "@babel/register",
-      "./_config.js"
+      "./test-config.js"
     ]
   }
 }

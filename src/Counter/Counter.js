@@ -1,6 +1,6 @@
-import { Componet } from 'react'
+import { Component } from 'react'
 
-class Counter extends Componet {
+class Counter extends Component {
   state = {
     value: this.props.initial || 0
   }

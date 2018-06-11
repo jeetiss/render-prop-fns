@@ -2,10 +2,10 @@ import { Component } from 'react'
 
 class Toggler extends Component {
   state = {
-    value: !!this.initial || false
+    value: !!this.props.initial || false
   }
 
-  toggle = value => this.setState({ value: !value })
+  toggle = () => this.setState({ value: !this.state.value })
   on = () => this.setState({ value: true })
   off = () => this.setState({ value: false })
 
@@ -20,11 +20,11 @@ class Toggler extends Component {
     }
 
     if (typeof render === 'function') {
-      return children(innerProps)
+      return render(innerProps)
     }
 
     if (typeof children === 'function') {
-      return render(innerProps)
+      return children(innerProps)
     }
 
     return null
