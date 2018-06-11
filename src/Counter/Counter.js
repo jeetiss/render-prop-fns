@@ -5,12 +5,13 @@ class Counter extends Component {
     value: this.props.initial || 0
   }
 
-  max = this.props.max
+  max = this.props.max || Infinity
+  min = this.props.min || 0
 
   set = value =>
-    this.max
-      ? this.setState({ value: value % this.max })
-      : this.setState({ value })
+    this.setState({
+      value: value > this.max ? this.min : value < this.min ? this.max : value
+    })
 
   inc = () => this.set(this.state.value + 1)
   dec = () => this.set(this.state.value - 1)
